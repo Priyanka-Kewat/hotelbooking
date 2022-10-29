@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Registration form</title>
+    <!-- <link  rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        
+    <style>
+        body{
+            background-image: url("./public/imges/hotel\ new\ img.jpg");
+            background-repeat: no-repeat;   
+            background-attachment: fixed;           
+           background-size: cover;
+        }
+        
+        
+        .headlist{
+            display: grid;
+            grid-template-columns: 4fr 8fr ;
+            margin-top:0px ;
+        
+        }
+        .head-top{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        button{
+            background-color:rgba(5, 5, 21,0.4) ;
+            color: antiquewhite;
+            border: none;
+            font-size: 25px;
+            font-family: Colonna MT Regular;
+        }
+        .card{
+            /* border: 3px solid rgb(6, 95, 6); */
+            box-shadow: 5px 5px 5px rgba(10, 10, 57, 0.788) ;
+            width: 800px;
+            height: auto;
+            text-align: left;
+            margin-top: 20px;
+            background-color: rgba(10, 10, 57, 0.788);
+            border-radius: 15px;
+            padding: 5px;
+            text-align:center;
+            color: white;
+
+        }
+        .card div{
+            margin-top: 10px;
+        }
+        #box,.box{
+            display: flex;
+            flex-wrap: wrap;
+           justify-content: space-around;
+        }
+        .fstid{
+            border-radius: 20px;
+            background-color:rgba(129, 129, 146, 0.788) ;
+            padding: 10px;
+            color: darkred;
+            font-size: 18px;
+        }
+        .fstid-1{
+            border-radius: 20px;
+            background-color:rgba(129, 129, 146, 0.788) ;
+            padding: 10px;
+            color: darkred;
+            font-size: 18px;
+           
+        }
+        .fstid-2{
+            border-radius: 20px;
+            background-color:rgba(129, 129, 146, 0.788) ;
+            padding: 10px;
+            color: darkred;
+            font-size: 18px;
+        }
+        .fstid-2 input{
+            width: 300px;
+            margin-left: 50px;
+        }
+
+        input{
+            background-color: transparent; 
+            border: none;
+            margin-left: 5px;
+           
+            
+        }
+         h1{
+            text-shadow: 5px 5px 5px red;
+        } 
+        h2{
+            background-image: linear-gradient(to right,rgb(18, 18, 125),rgb(9, 82, 9),rgb(22, 22, 97));
+            
+        }
+        .imgbox{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            
+            
+        }
+        #sizebox{
+            width: 200px;
+        }
+        span{
+            margin-right: 10px;
+        }
+        label{
+            font-size: 24px;
+            color: whitesmoke;
+        }
+        
+        
+        
+    </style>
+    <script type="text/javascript">
+        function bodyLoad(){
+            var head = document.createElement("div");
+            head.style = `background-color:rgba(5, 5, 21,0.4); color:white; font-family: Colonna MT Regular; font-size:25px; height:40px;`;
+            head.className = `headlist`;
+            head.innerHTML = `
+                <div>HillTown Resort</div>
+                <div">
+                    <button>HOME</button>
+                    <button>About US</button>
+                    <button>SignIn</button>
+                    <button onclick="bokNow()" style="background-color:rgba(6, 95, 6,0.44); border-radius:5px;">BOOK NOW</button>
+                </div>
+            
+            `;
+            document.getElementById("addHead").appendChild(head);
+        }
+
+        function CreateForm(){
+            var div = document.createElement("div");
+            div.className = `head-top`;
+            div.innerHTML= `
+            <div class="card" >
+            <h1 style="font-family: Castellar Regular; ">Hotel Registration Form</h1>
+            <h2 ><span class="bi bi-person-lines-fill"></span>Customer Info</h2>
+            <form>
+                <div id="box">
+                <div class="fstid" style=" margin: 10px;  ">Customer Name<input type="text"  style="height:30px;"></div>
+                <div class="fstid-1" style=" margin: 10px;   ">Check In Date<input  type="date" id="sizebox"  style="height:30px;"></div>
+                  
+                </div>
+                <div class="box">
+                    <div class="fstid" style=" margin: 10px;  ">Total No of Days<input type="number"  style="height:30px;"></div>
+                    <div class="fstid" style=" margin: 10px;  ">Total No of Person<input type="number" style="height:30px;"></div>
+                </div>
+            </form>
+            <h2><span class="bi bi-check2-circle"></span>Select Room Type</h2>
+                <div class="imgbox">
+                    <div>
+                        <img src="./public/imges/room1st.jpg" width="80%" height=200px ><br>
+                        <label>Dulax Room<label><input type="radio" > &#8377; 2500/-
+                    </div>
+                    <div>
+                        <img src="./public/imges/room2nd.jpg" width="80%" height=200px ><br>
+                        <label>Suite Room<label><input type="radio" > &#8377; 4000/-
+                    </div>
+                </div>
+                <h2><span class="bi bi-check2-square"></span>Select Amenities</h2>
+                <div  class="imgbox">
+                    <div>
+                        <img src="./public/imges/air ac.jpg" width="80%" height=200px ><br>
+                        <label>Ac<label><input type="checkbox" > &#8377; 1000/-
+                    </div>
+                    <div>
+                        <img src="./public/imges/lock.jpg" width="80%" height=200px ><br>
+                        <label>Locker<label><input type="checkbox" > &#8377; 300/-
+                    </div>
+                </div>
+                <h2><span class="bi bi-currency-rupee"></span>Advance Amount</h2>
+                <div>
+                    <div class="fstid-2" style=" margin: 10px;">
+                        
+                        Advance Amount<input type="text"  style="height:30px;"></div>
+                    <div>
+                        <button style="background-image: linear-gradient(to right,rgb(18, 178, 18),rgb(9, 9, 122),rgb(9, 118, 9)); width:300px; height:40px" onclick="registerBtn()">Register</button>
+                    </div>
+                </div>
+            </div>    
+            `;
+            document.getElementById("btnBook").appendChild(div);
+        }
+
+        function bokNow(){
+            x= document.getElementsByClassName("card").length;
+            if(x==0){
+                CreateForm();
+            }
+        }
+    </script>
+</head>
+<body onload="bodyLoad()" class="container-fluid" id="addTag">
+    <header id="addHead">
+
+    </header>
+    <section id="btnBook">
+
+    </section>
+    
+
+</body>
+</html>
